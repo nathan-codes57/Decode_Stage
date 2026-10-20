@@ -8,7 +8,7 @@ module control(
     );
     
     parameter RTYPE = 6'b000000;
-    parameter LW = 6'b100011
+    parameter LW = 6'b100011;
     parameter SW = 6'b100101;
     parameter BEQ = 6'b000100;
     parameter NOP = 6'b100000;
