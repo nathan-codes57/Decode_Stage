@@ -39,7 +39,7 @@ module control(
             SW: begin
                 wb <= 2'b00;
                 mem <= 3'b001;
-                ex <= 4'b0010;
+                ex <= 4'b0001;
             end
             BEQ: begin
                 wb <= 2'b00;
