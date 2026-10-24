@@ -9,7 +9,7 @@ module control(
     
     parameter RTYPE = 6'b000000;
     parameter LW = 6'b100011;
-    parameter SW = 6'b100101;
+    parameter SW = 6'b101011;
     parameter BEQ = 6'b000100;
     parameter NOP = 6'b100000;
     initial begin
@@ -18,7 +18,7 @@ module control(
         ex = 4'b0000;
     end
     
-    always @(posedge clk)begin
+    always @(*) begin
         if(rst) begin
             wb = 2'b00;
             mem = 3'b000;
@@ -53,5 +53,4 @@ module control(
             end
         endcase
     end
-    
 endmodule
