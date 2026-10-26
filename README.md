@@ -12,25 +12,25 @@ verified.
 ## Requirements
 | Requirement | Description | Verification Method |
 |---|---|---|
-| Latch | Passes data onto the next pipeline stage | [Test case, waveform, calculation, or inspection] |
-| Register File | 32 general purpose registers, If regwrite == 1, then write the "writedata" value into the "write reg" location Else read the data from "read reg1" and "read reg2" as their respective "read data" | [Test case, waveform, calculation, or inspection] |
-| Control | Follow MIPS control format | [Test case, waveform, calculation, or inspection] |
-| Sign Extend | Receives 16 bit immediate values and outputs 32 bits sign extended | [Test case, waveform, calculation, or inspection] |
-| Final ID Stage | Ties all 4 minor modules together into overall Instruction Decode | [Test case, waveform, calculation, or inspection] |
+| Latch | Passes data onto the next pipeline stage | Test case, waveform, inspection |
+| Register File | 32 general purpose registers, If regwrite == 1, then write the "writedata" value into the "write reg" location Else read the data from "read reg1" and "read reg2" as their respective "read data" | Test case, waveform, inspection |
+| Control | Follow MIPS control format | Test case, waveform, inspection |
+| Sign Extend | Receives 16 bit immediate values and outputs 32 bits sign extended | Test case, waveform, inspection |
+| Final ID Stage | Ties all 4 minor modules together into overall Instruction Decode | Test case, waveform, inspection |
 ## Implementation
 ### Source Code
 | File | Description |
 |---|---|
-| [`control.v`](LINK_TO_IMPLEMENTATION_CODE) | [Primary implementation module] |
-| [`signExtend.v`](LINK_TO_COMPONENT_CODE) | [Supporting component] |
-| [`RegFile.v`](LINK_TO_TESTBENCH_CODE) | [Verification testbench] |
-| [`IDEXLatch.v`](LINK_TO_TESTBENCH_CODE) | [Verification testbench] |
-| [`Decode.v`](LINK_TO_TESTBENCH_CODE) | [Verification testbench] |
-| [`Decode_tb.v`](LINK_TO_TESTBENCH_CODE) | [Verification testbench] |
+| [`control.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Source-Files/control.v) | Source code for control module |
+| [`signExtend.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Source-Files/signExtend.v) | Source code for sign extend module |
+| [`RegFile.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Source-Files/RegFile.v) | Source code for register file module |
+| [`IDEXLatch.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Source-Files/IDEXLatch.v) | Source code for IDEX latch |
+| [`Decode.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Source-Files/Decode.v) | Source code for decode module |
+| [`Decode_tb.v`](https://github.com/nathan-codes57/Decode_Stage/blob/main/Testbench-Files/Decode_tb.v) | Testbench code for decode module |
 ### Implementation Notes
-- [Explain one important design decision.]
-- [Identify any parameterization, reusable module, or interface convention.]
-- [Document any deliberate simplification made for this lab.]
+- Instruction types include R-Format, LW, SW, and BEQ.
+- Decode, register file, sign extender are reusable.
+- Modules wired to other pipeline stages left disconnected.
 ## Verification
 ### Verification Strategy
 The design is verified using **[simulation, formal checks, hardware testing, or
