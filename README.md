@@ -5,7 +5,7 @@ Keep this README focused on what the design does, how it is used, and how it was
 verified.
 -->
 ## Design Scope and Assumptions
-- **In scope:** This lab implements an instruction deode in verilog.
+- **In scope:** This lab implements an instruction decode in verilog.
 - **Out of scope:** Fetch, Execute, Memory Access, Writeback
 - **Assumptions:** 32 bit data bus, 32 registers
 - **Limitations:** No addi instruction, disconnected write reg, write data, NPC_in, regwrite
